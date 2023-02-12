@@ -27,13 +27,20 @@ app.get('/contact',function(req,res){
   res.render("contact",{pageContact:contactContent})
 })
 
+app.get('/compose',function(req,res){
+  res.render("compose")
+})
+
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
 
 
-app.post("/about",function(req,res){
-  
-  res.redirect('/about')
+app.post("/compose",function(req,res){
+  const post = {
+    title: req.body.postTitle,
+    content: req.body.postTitle
+  };
+  console.log(item);
 })
