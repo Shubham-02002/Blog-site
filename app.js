@@ -19,7 +19,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get('/', function(req,res){
-  res.render("home",{startingContent:homeStartingContent,
+  res.render("home",{
+  startingContent:homeStartingContent,
   posts:posts
   })
 })
@@ -41,7 +42,8 @@ app.get("/posts/:topic",function(req,res){
   // console.log(req.params.topic);
   for (var i = 0; i < posts.length; i++) {
     if( requestedTitle === _.lowerCase(posts[i].title)){
-      res.render("post",{title:posts[i].title,
+      res.render("post",{
+      title:posts[i].title,
       content:posts[i].content
       })
     }
